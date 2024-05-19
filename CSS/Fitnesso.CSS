@@ -5,16 +5,39 @@ body {
     margin: 0;
 }
 
-header {
-    margin-top: 40px;
-    margin-bottom: 40px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
+header {
+    max-width: 1500px;
+    margin: auto;
+    
+    padding: 30px 15px;
+    position: relative;
+
+}
+
+header div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+    
+
 
 header div ul li {
     display: inline-block;
     list-style-type: none;
-    margin-left: 0;
-    margin-right: 0;
 }
 
 header div ul {
@@ -26,7 +49,7 @@ li a {
     color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     opacity: 0.6;
-    padding: 20px;
+    padding-inline: 20px;
     font-weight: 500;
     line-height: 20px;
 }
@@ -36,30 +59,31 @@ li a:hover {
     font-weight: bold;
 }
 
+.menu-icons{
+    display: none;
+}
+
 #start {
     padding: 0;
     text-decoration: none;
     font-style: italic;
     color: white;
-    margin-right: 0;
-    margin-left: 270px;
     background-color: black;
     font-weight: bold;
     opacity: 100%;
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 10px 30px;
     border-radius: 20px;
 }
 
 #fitnesso {
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     opacity: 100%;
-    padding: 0;
-    margin-right: 300px;
-    margin-left: 0px;
     text-decoration: underline;
+    color: black;
+    font-size: 25px;
+
 }
 
 #img1 {
@@ -71,12 +95,22 @@ li a:hover {
 }
 
 .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background: url('../Images/Athlete2.jpg');
+    background-size:cover;
+    background-position: center;
     text-align: center;
-    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 300px 0;
+    gap: 30px;
+
+}
+
+.overlay a{
+    width: fit-content;
+    align-self: center;
+    text-wrap: nowrap;
 }
 
 .overlay h1 {
@@ -120,10 +154,20 @@ li a:hover {
     color: black;
 }
 
-#goals {
+/* #goals {
     display: block;
     text-align: center;
     margin-top: 70px;
+} */
+
+
+#goals {
+    margin-top: 70px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
 }
 
 #goals h6 {
@@ -131,37 +175,92 @@ li a:hover {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     opacity: 0.6;
     font-weight: 500;
+    font-size: 15px;
 }
 
 #goals h1 {
     margin-top: -20px;
     font-style: italic;
     font-size: 60px;
+    padding: 0 15px;
 }
 
-.container2 {
+/* .container2 {
     display: flex;
     width: 80%;
     height: 425px;
     margin: 150px 10%;
+} 
+
+try not to set fixed heights on containers 
+set max-width better than width
+*/
+
+.container2 {
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+
+    padding: 70px 15px;
+    gap: 100px;
 }
 
-.text {
+.container2.reverse{
+    padding-top: 0;
+}
+
+/* .text {
     flex: 1;
     padding: 20px;
+
+    you need display flex to be able to flex the item 
+} */
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    width: 50%;
 }
 
-.img2 {
+/* .img2 {
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
+
+/* .img2 img {
+    max-width: 100%;
+    max-height: 100%;
+    
+    set height on img
+    add object-fit and object position
+} */
 
 .img2 img {
     max-width: 100%;
-    max-height: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
+
+/* add img3 styling */
+
+.img3 img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img2, .img3{
+    width: 50%;
+}
+
 
 .container2 h5,
 p {
@@ -174,22 +273,25 @@ p {
 .container2 a {
     display: inline-block;
     margin: 10px 0;
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 19px;
-    background-color: white;
+    background-color: black;
     padding: 15px 30px;
     border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
+
 .container2 a:hover {
-    background-color: black;
+    background-color: rgb(117, 117, 117);
     color: white;
 }
 
-.container3 {
+
+
+/* .container3 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -199,11 +301,48 @@ p {
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     margin-top: 50px;
+} */
+
+.container3 {
+    background-color: #fff;
+    padding: 20px 15px;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 50px;
 }
+
+.container3-blocks{
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* .container3 h1 {
+    margin-bottom: 20px;
+} */
 
 .container3 h1 {
     margin-bottom: 20px;
+    text-align: start;
+    width: 20%;
 }
+
+/* .container3 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    background-color: #e0e0e0;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 30px;
+    width: 300px;
+} */
 
 .container3 .content {
     display: flex;
@@ -214,7 +353,9 @@ p {
     margin: 20px;
     padding: 10px;
     border-radius: 30px;
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
+    gap: 5px;
 }
 
 .container3 .content h3 {
@@ -230,11 +371,116 @@ p {
     text-decoration: none;
 }
 
-@media (min-width: 768px) {
-    .container3 {
-        flex-direction: row;
+.phone-menu-register{
+    display: none;
+}
+
+
+
+
+@media (max-width: 1000px) {
+    h1, h2{
+        font-size: 30px !important;
+    }
+    h4, h5, h6, p{
+        font-size: 16px;
+    }
+    .phone-menu-register{
+        display: block;
+    }
+    #menu{
+        background-color: white;
+        position: absolute;
+        top: 89px;
+        right: 50%;
+        z-index: 999;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+        height: 0;
+        overflow: hidden;
+        transform: translateX(50%);
+        transition: height 0.3s ease;
+    }
+
+
+    header ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
+        font-size: 20px;
+        width: 100%;
+        height: 75vh;
+    }
+    
+
+    header ul.open {
+        height: 75vh; 
+    }
+
+
+
+    #start{
+        display: none;
+    }
+    .menu-icons{
+        display: block;
+        width: 25px;
+        cursor: pointer;
+    }
+    
+    #menu-icon-close{
+        display: none;
+    }
+
+    
+
+
+    .overlay{
+        padding: 100px 0;
+    }
+    
+    .container2{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+    
+    .container2.reverse{
+        flex-direction: column-reverse;
+    }
+    
+    .text{
+        width: 100%;
+    }
+    
+    .img2, .img3{
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .container3-blocks {
+        flex-direction: column;
         justify-content: center;
     }
+    .container3 h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container3 .content {
+        text-align: center;
+
+    
+    }
+
+    
 }
 
 .footer {
@@ -244,19 +490,22 @@ p {
     padding: 100px 20px;
     margin-top: 100px;
     border-top: 1px solid #e6dcdc;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .footer h1 {
     font-style: italic;
     font-size: 36px;
-    margin-bottom: 20px;
 }
 
 .footer p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     opacity: 0.6;
     font-weight: 500;
-    margin-bottom: 20px;
 }
 
 .footer a#start-link {
@@ -270,11 +519,13 @@ p {
     padding: 10px 30px;
     border-radius: 20px;
     transition: background-color 0.3s, color 0.3s;
+    width: fit-content;
+    margin: auto;
 }
 
 .footer a#start-link:hover {
-    background-color: rgb(190, 172, 172);
-    color: black;
+    background-color: rgb(117, 117, 117);
+    color: white;
 }
 
 #contactus {

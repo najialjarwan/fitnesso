@@ -1,16 +1,11 @@
-fetch('header.html')
-    .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-});
-
-//email sender
 (function() {
     emailjs.init("p2l6m-hfvW8aiMcai");
 })();
 
 document.getElementById('welcomeForm').addEventListener('submit', function(event) {
     event.preventDefault();
+
+    console.log("Form submission event listener triggered");
 
     const fullName = document.getElementById('fullName').value;
     const email = document.getElementById('email').value;
@@ -19,6 +14,7 @@ document.getElementById('welcomeForm').addEventListener('submit', function(event
 
     const passwordError = document.getElementById('passwordError');
     if (password !== confirmPassword) {
+        console.log("Passwords do not match");
         passwordError.style.display = 'block';
         return;
     } else {
@@ -28,10 +24,12 @@ document.getElementById('welcomeForm').addEventListener('submit', function(event
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const emailError = document.getElementById('emailError');
     if (!emailPattern.test(email)) {
+        console.log("Email format is incorrect");
         emailError.style.display = 'block';
-        return;
+        return; // Stop further execution
     } else {
         emailError.style.display = 'none';
+        createDynamicElement(fullName, email); // Only call createDynamicElement if email is valid
     }
 
     const templateParams = {
@@ -41,6 +39,7 @@ document.getElementById('welcomeForm').addEventListener('submit', function(event
 
     emailjs.send('service_h97o1gb', 'template_wnp4etj', templateParams)
     .then(function(response) {
+        console.log("Email sent successfully");
 
         const message = document.getElementById('message');
         message.textContent = `A welcome email has been sent to ${email}.`;
@@ -55,6 +54,7 @@ document.getElementById('welcomeForm').addEventListener('submit', function(event
 
         document.querySelector('#welcomeForm button[type="submit"]').disabled = true;
     }, function(error) {
+        console.log("Failed to send email:", error);
 
         const message = document.getElementById('message');
         message.textContent = `Failed to send email. Error: ${JSON.stringify(error)}`;
@@ -64,71 +64,27 @@ document.getElementById('welcomeForm').addEventListener('submit', function(event
 });
 
 
-//input checker
-document.getElementById('welcomeForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var confirmPassword = document.getElementById('confirmPassword').value;
-
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var emailError = document.getElementById('emailError');
-    if (!emailPattern.test(email)) {
-        emailError.style.display = 'block';
-        return;
-    } else {
-        emailError.style.display = 'none';
-    }
-
-    var passwordError = document.getElementById('passwordError');
-    if (password !== confirmPassword) {
-        passwordError.style.display = 'block';
-        return;
-    } else {
-        passwordError.style.display = 'none';
-    }
-
-    var inputs = document.querySelectorAll('#welcomeForm input');
-    inputs.forEach(function(input) {
-        input.value = '';
-        input.disabled = true;
-    });
-
-    document.querySelector('#welcomeForm button[type="submit"]').disabled = true;
-
+function createDynamicElement(fullName, email) {
+    // JavaScript code to add radio input and form dynamically after form submission
     var successMessage = document.getElementById('successMessage');
-    successMessage.innerHTML = `A welcome email has been sent to ${email}.
-    <br>Please fill in the below information.`;
+    successMessage.innerHTML = `A welcome email has been sent to ${email}.<br>Please fill in the below information.`;
     successMessage.style.display = 'block';
-});
 
-
-
-// JavaScript code to add radio input and form dynamically after form submission
-
-document.getElementById("welcomeForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get full name from the initial form
-    var fullNameFromInitialForm = document.getElementById("fullName").value;
-
-    // Create radio input for choosing goal
     var goalRadioDiv = document.createElement("div");
     goalRadioDiv.className = "goalRadioDiv"; // Add class for styling
     goalRadioDiv.innerHTML = "<label>Choose your goal:</label><br>" +
-        "<input type='radio' id='loseWeight' name='goal' value='loseWeight' required>" +
-        "<label for='loseWeight'>Lose Weight</label><br>" +
-        "<input type='radio' id='gainWeight' name='goal' value='gainWeight' required>" +
-        "<label for='gainWeight'>Gain Weight</label><br><br>";
-
+    "<input type='radio' id='loseWeight' name='goal' value='loseWeight' required>" +
+    "<label for='loseWeight'>Lose Weight</label><br>" +
+    "<input type='radio' id='gainWeight' name='goal' value='gainWeight' required>" +
+    "<label for='gainWeight'>Gain Weight</label><br><br>";
+    
     // Create form for additional information
     var additionalInfoForm = document.createElement("form");
     additionalInfoForm.id = "additionalInfoForm";
     additionalInfoForm.className = "additionalInfoForm"; // Add class for styling
     additionalInfoForm.innerHTML = "<label for='dynamicFullName'>Full Name:</label>" +
-        "<input type='text' id='dynamicFullName' name='dynamicFullName' value='" + fullNameFromInitialForm + "' required><br><br>" + // Populate with initial full name
-        "<label for='gender'>Gender:</label>" +
+    "<input type='text' id='dynamicFullName' name='dynamicFullName' value='" + fullName + "' required><br><br>" + // Populate with initial full name
+    "<label for='gender'>Gender:</label>" +
         "<select id='gender' name='gender' required>" +
         "<option value='male'>Male</option>" +
         "<option value='female'>Female</option>" +
@@ -159,6 +115,7 @@ document.getElementById("welcomeForm").addEventListener("submit", function(event
         "</select><br><br>" +
         "<button id='calculateButton' type='submit'>Calculate Daily Calorie Intake</button>"; // Changed button text
 
+
     // Append radio input and form to a container div
     var dynamicElementsContainer = document.createElement("div");
     dynamicElementsContainer.id = "dynamicElementsContainer"; // Adding an ID for easy access
@@ -166,9 +123,13 @@ document.getElementById("welcomeForm").addEventListener("submit", function(event
     dynamicElementsContainer.appendChild(goalRadioDiv);
     dynamicElementsContainer.appendChild(additionalInfoForm);
 
+    console.log("Dynamic element created");
+
     // Insert the container div after the existing form container
     var formContainer = document.getElementById("formContainer");
     formContainer.insertAdjacentElement("afterend", dynamicElementsContainer);
+
+    console.log("Dynamic element appended to DOM");
 
     // Event listener to calculate and display form information
     additionalInfoForm.addEventListener("submit", function(event) {
@@ -224,5 +185,5 @@ document.getElementById("welcomeForm").addEventListener("submit", function(event
             }
         };
     });
-});
+}
 
