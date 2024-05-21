@@ -2,16 +2,20 @@
 $title = 'Fitnesso - Home';
 
 $content = '
-<div class = "container">
-<div class = "overlay">
-    <h1>Your Fitness Journey Starts Here.</h1>
-    <h4>"You don\'t have to be great to start, but you have to start to be great."</h4>
-    <a href="About.php" 
-     onmousedown="changeSize1(this)"
-     onmouseup="changeSize2(this)">
-     Learn More
-     </a>
-</div>
+<div class="container">
+    <div class="overlay">
+        <video autoplay muted loop id="background-video">
+            <source src="Images/hero_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Your Fitness Journey Starts Here.</h1>
+        <h4>"You don\'t have to be great to start, but you have to start to be great."</h4>
+        <a href="/about"
+           onmousedown="changeSize1(this)"
+           onmouseup="changeSize2(this)">
+           Learn More
+        </a>
+    </div>
 </div>
 
 <div id = "goals">

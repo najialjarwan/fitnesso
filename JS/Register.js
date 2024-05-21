@@ -2,6 +2,20 @@
     emailjs.init("p2l6m-hfvW8aiMcai");
 })();
 
+function sendWelcomeEmail(fullName, email) {
+    const templateParams = {
+        full_name: fullName,
+        email: email,
+    };
+
+    emailjs.send('service_h97o1gb', 'template_wnp4etj', templateParams)
+    .then(function(response) {
+        console.log('Email sent:', response);
+    }, function(error) {
+        console.error('Failed to send email:', error);
+    });
+}
+
 document.getElementById('welcomeForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -29,45 +43,33 @@ document.getElementById('welcomeForm').addEventListener('submit', function(event
         return; // Stop further execution
     } else {
         emailError.style.display = 'none';
-        createDynamicElement(fullName, email); // Only call createDynamicElement if email is valid
     }
 
-    const templateParams = {
-        full_name: fullName,
-        email: email,
+    // Form data to be sent to the PHP script
+    const formData = new FormData();
+    formData.append('fullName', fullName);
+    formData.append('email', email);
+    formData.append('password', password);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'connection.php', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log("Registration successful!");
+                createDynamicElement(fullName, email);
+                sendWelcomeEmail(fullName, email);
+            } else {
+                console.error("Error:", xhr.responseText);
+            }
+        }
     };
-
-    emailjs.send('service_h97o1gb', 'template_wnp4etj', templateParams)
-    .then(function(response) {
-        console.log("Email sent successfully");
-
-        const message = document.getElementById('message');
-        message.textContent = `A welcome email has been sent to ${email}.`;
-        message.style.color = 'green';
-        message.style.display = 'block';
-
-        const inputs = document.querySelectorAll('#welcomeForm input');
-        inputs.forEach(function(input) {
-            input.value = '';
-            input.disabled = true;
-        });
-
-        document.querySelector('#welcomeForm button[type="submit"]').disabled = true;
-    }, function(error) {
-        console.log("Failed to send email:", error);
-
-        const message = document.getElementById('message');
-        message.textContent = `Failed to send email. Error: ${JSON.stringify(error)}`;
-        message.style.color = 'red';
-        message.style.display = 'block';
-    });
+    xhr.send(formData);
 });
 
-
 function createDynamicElement(fullName, email) {
-    // JavaScript code to add radio input and form dynamically after form submission
     var successMessage = document.getElementById('successMessage');
-    successMessage.innerHTML = `A welcome email has been sent to ${email}.<br>Please fill in the below information.`;
+successMessage.innerHTML = `Registration Successful! an email has been sent to ${email}<br>Please fill in the below information.`;
     successMessage.style.display = 'block';
 
     var goalRadioDiv = document.createElement("div");
@@ -78,7 +80,6 @@ function createDynamicElement(fullName, email) {
     "<input type='radio' id='gainWeight' name='goal' value='gainWeight' required>" +
     "<label for='gainWeight'>Gain Weight</label><br><br>";
     
-    // Create form for additional information
     var additionalInfoForm = document.createElement("form");
     additionalInfoForm.id = "additionalInfoForm";
     additionalInfoForm.className = "additionalInfoForm"; // Add class for styling
@@ -125,28 +126,36 @@ function createDynamicElement(fullName, email) {
 
     console.log("Dynamic element created");
 
-    // Insert the container div after the existing form container
     var formContainer = document.getElementById("formContainer");
     formContainer.insertAdjacentElement("afterend", dynamicElementsContainer);
 
     console.log("Dynamic element appended to DOM");
 
-    // Event listener to calculate and display form information
     additionalInfoForm.addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent form submission
 
-        // Get additional information
-        var fullName = document.getElementById("dynamicFullName").value;
-        var gender = document.getElementById("gender").value;
-        var age = parseInt(document.getElementById("age").value);
-        var height = parseInt(document.getElementById("height").value);
-        var weight = parseInt(document.getElementById("weight").value);
-        var workoutType = document.getElementById("workoutType").value;
-        var workoutIntensity = parseInt(document.getElementById("workoutIntensity").value); // Parsing as integer
+    var fullName = document.getElementById("dynamicFullName").value;
+    var gender = document.getElementById("gender").value;
+    var age = parseInt(document.getElementById("age").value);
+    var height = parseInt(document.getElementById("height").value);
+    var weight = parseInt(document.getElementById("weight").value);
+    var workoutType = document.getElementById("workoutType").value;
+    var workoutIntensity = parseInt(document.getElementById("workoutIntensity").value); // Parsing as integer
+    var goal = document.querySelector('input[name="goal"]:checked').value; // Get the selected goal value
 
-        // Calculate daily calorie intake (simple example formula)
-        var dailyCalorieIntake = 10 * weight + 6.25 * height - 5 * age + (gender === 'male' ? 5 : -161);
-        dailyCalorieIntake *= (1.2 + (0.175 * workoutIntensity)); // Adjust based on workout intensity
+    var dailyCalorieIntake = 10 * weight + 6.25 * height - 5 * age + (gender === 'male' ? 5 : -161);
+    dailyCalorieIntake *= (1.2 + (0.175 * workoutIntensity)); // Adjust based on workout intensity
+
+    var formData = new FormData();
+    formData.append('full_name', fullName);
+    formData.append('gender', gender);
+    formData.append('age', age);
+    formData.append('height', height);
+    formData.append('weight', weight);
+    formData.append('goal', goal);
+    formData.append('workout_type', workoutType);
+    formData.append('workout_intensity', workoutIntensity);
+    formData.append('daily_calorie_intake', dailyCalorieIntake);
 
         // Create table with headers for input values
         var table = "<h2>Form Information</h2>" +
@@ -162,24 +171,35 @@ function createDynamicElement(fullName, email) {
             "<tr><td>Daily Intake (calories/day)</td><td id='dailyIntakeValue'>" + Math.round(dailyCalorieIntake) + "</td></tr>" +
             "</table>";
 
-        // Display table with headers
         var resultContainer = document.createElement("div");
         resultContainer.className = "resultContainer"; // Add class for styling
         resultContainer.innerHTML = table;
         dynamicElementsContainer.appendChild(resultContainer);
 
-        // Disable form fields
         var inputs = additionalInfoForm.elements;
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].disabled = true;
         }
+        
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'dynamicform.php', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log("Form data saved successfully:", xhr.responseText);
+                    console.log("Form Data:", formData);
 
-        // Change button text
+                } else {
+                    console.error("Error:", xhr.responseText);
+                }
+            }
+        };
+        xhr.send(formData);
+
         document.getElementById("calculateButton").textContent = "Calculated"; // Changed button text
 
-        // Change button functionality to recalculate
         document.getElementById("calculateButton").onclick = function() {
-            // Enable form fields
             for (var i = 0; i < inputs.length; i++) {
                 inputs[i].disabled = false;
             }

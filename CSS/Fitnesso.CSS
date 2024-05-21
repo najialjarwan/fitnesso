@@ -94,17 +94,46 @@ li a:hover {
     margin-left: 60px;
 }
 
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .overlay {
-    background: url('../Images/Athlete2.jpg');
-    background-size:cover;
-    background-position: center;
+    z-index: 1;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 300px 0;
     gap: 30px;
+    padding: 300px 0;
+    color: white; /* Ensure text is readable over video */
+}
 
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensure the video covers the whole area */
+    filter: grayscale(100%);
+}
+
+@media (max-width:1000px){
+    .container{
+        height: 60%;
+    }
 }
 
 .overlay a{
@@ -154,12 +183,6 @@ li a:hover {
     color: black;
 }
 
-/* #goals {
-    display: block;
-    text-align: center;
-    margin-top: 70px;
-} */
-
 
 #goals {
     margin-top: 70px;
@@ -185,17 +208,6 @@ li a:hover {
     padding: 0 15px;
 }
 
-/* .container2 {
-    display: flex;
-    width: 80%;
-    height: 425px;
-    margin: 150px 10%;
-} 
-
-try not to set fixed heights on containers 
-set max-width better than width
-*/
-
 .container2 {
     display: flex;
     max-width: 1400px;
@@ -210,12 +222,6 @@ set max-width better than width
     padding-top: 0;
 }
 
-/* .text {
-    flex: 1;
-    padding: 20px;
-
-    you need display flex to be able to flex the item 
-} */
 
 .text{
     display: flex;
@@ -226,21 +232,6 @@ set max-width better than width
     width: 50%;
 }
 
-/* .img2 {
-    flex: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-/* .img2 img {
-    max-width: 100%;
-    max-height: 100%;
-    
-    set height on img
-    add object-fit and object position
-} */
-
 .img2 img {
     max-width: 100%;
     height: 100%;
@@ -248,7 +239,6 @@ set max-width better than width
     object-position: center;
 }
 
-/* add img3 styling */
 
 .img3 img {
     max-width: 100%;
@@ -290,19 +280,6 @@ p {
 }
 
 
-
-/* .container3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-    margin-top: 50px;
-} */
-
 .container3 {
     background-color: #fff;
     padding: 20px 15px;
@@ -322,27 +299,11 @@ p {
 }
 
 
-/* .container3 h1 {
-    margin-bottom: 20px;
-} */
-
 .container3 h1 {
     margin-bottom: 20px;
     text-align: start;
     width: 20%;
 }
-
-/* .container3 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    background-color: #e0e0e0;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 30px;
-    width: 300px;
-} */
 
 .container3 .content {
     display: flex;
@@ -415,16 +376,14 @@ p {
         height: 75vh;
     }
     
-
     header ul.open {
         height: 75vh; 
     }
 
-
-
     #start{
         display: none;
     }
+    
     .menu-icons{
         display: block;
         width: 25px;

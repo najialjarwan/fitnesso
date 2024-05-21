@@ -24,7 +24,7 @@ $content = '
             <input type="password" id="confirmPassword" name="confirmPassword" required><br>
             <span id="passwordError" style="color: red; display: none;">Passwords do not match!</span><br>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Register</button>
             <p id="successMessage" style="color: green; display: none;"></p>
         </form>
     </div>
