@@ -10,7 +10,7 @@ $content = '
         </video>
         <h1>Your Fitness Journey Starts Here.</h1>
         <h4>"You don\'t have to be great to start, but you have to start to be great."</h4>
-        <a href="/about"
+        <a href="About.php"
            onmousedown="changeSize1(this)"
            onmouseup="changeSize2(this)">
            Learn More

@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             menuIconClose.style.display = 'none';
         } else {
             menu.classList.add('open');
-            menu.style.height = '80vh';  // Match this to the height defined in your CSS
+            menu.style.height = '80vh';
             menuIconOpen.style.display = 'none';
             menuIconClose.style.display = 'block';
         }

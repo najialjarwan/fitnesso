@@ -1,4 +1,5 @@
 .gettingStarted {
+    width: 95% !important;
     background-color: black;
     color: white;
     font-size: 60px;
@@ -6,6 +7,7 @@
     font-style: italic;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 220px 15px;
+    margin: auto;
 }
 
 #formContainer {
@@ -35,7 +37,8 @@
 
 #formContainer input[type="text"],
 #formContainer input[type="email"],
-#formContainer input[type="password"] {
+#formContainer input[type="password"],
+#formContainer input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -45,6 +48,18 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
 }
+
+#formContainer select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+
 
 #formContainer button[type="submit"] {
     display: block; 
@@ -60,12 +75,27 @@
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     margin-top: 20px; 
-
 }
 
 #formContainer button[type="submit"]:hover {
     background-color: rgb(190, 172, 172);
     color: black;
+}
+
+.signUP{
+    display: block; 
+    width: 100%; 
+    padding: 15px 0; 
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
 }
 
 #successMessage{
@@ -145,8 +175,12 @@
     color: black;
 }
 
-.resultContainer {
-    margin-top: 20px; 
+.resultContainer h1{
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
 }
 
 .infoTable {
@@ -165,4 +199,46 @@
 .register-footer{
     padding: 50px 15px !important;
     margin-top: 50px !important;
+}
+
+.infoTable {
+    width: 30%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.resultContainer h1{
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+    text-align: center;
+}
+
+.infoTable td {
+    text-align: center;
+    width: 50%;
+    border-bottom: 3px solid black;
+    background-color: white;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 12px 15px;
+}
+
+.infoTable th {
+    border-bottom: 3px solid white;
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 12px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: 50%;
 }

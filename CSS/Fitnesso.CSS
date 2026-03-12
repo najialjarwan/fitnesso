@@ -44,6 +44,8 @@ header div ul {
     text-align: center;
 }
 
+
+
 li a {
     text-decoration: none;
     color: black;
@@ -481,6 +483,7 @@ p {
     width: fit-content;
     margin: auto;
 }
+
 
 .footer a#start-link:hover {
     background-color: rgb(117, 117, 117);

@@ -1,5 +1,4 @@
 <?php
-
 $title = 'Fitnesso - About Us';
 $content = '
 <div class = "gettingStarted">
@@ -32,17 +31,6 @@ $content = '
         </div>
     </div>
 
-    <div class="join-us">
-        <h1>
-            Join us at Fitnesso
-        </h1>
-        <p>Let us work together to transform your health, boost your confidence, and unleash your full potential!</p>
-
-        <a href="Register.php" id="start" onmousedown="changeSize1(this)" onmouseup="changeSize2(this)">
-            Start Now
-        </a>
-
-    </div>
 </div>
 ';
 
