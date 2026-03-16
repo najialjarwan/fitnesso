@@ -22,22 +22,13 @@
 ## 🔷 Project Overview
 <table>
 <tr><td>Type</td><td>university project</td></tr>
+<tr><td>My role</td><td>full-stack</td></tr>
 <tr><td>Platform</td><td>website</td></tr>
 <tr><td>Duration</td><td>spring 2024 & fall 2024</td></tr>
 <tr><td>Status</td><td>completed</td></tr>
 <tr><td>Version</td><td>1.0.0</td></tr>
 <tr><td>Live Demo</td><td>https://fitnesso.ct.ws/</td></tr>
 </table>
-
-
-<!-- 
-📸 SCREENSHOTS PLACEHOLDER
-
-This section will eventually render project screenshots or GIF demos.
-Humans scan images first, so keep it near the top.
--->
-
-<!-- {{screenshots}} -->
 
 
 ## ⚙️ Tech Stack & Tools
