@@ -39,7 +39,7 @@
     <td>
         <img src="https://najialjarwan.vercel.app/external-icons/html.svg" height="40" title="HTML5" />&nbsp;&nbsp;
         <img src="https://najialjarwan.vercel.app/external-icons/css.svg" height="40" title="CSS3" />&nbsp;&nbsp;
-        <img src="https://najialjarwan.vercel.app/external-icons/javascript.svg" height="40" title="JavaScript (ES6+)" />
+        <img src="https://najialjarwan.vercel.app/external-icons/javascript.svg" height="40" title="JavaScript" />
     </td>
   </tr>
   <tr>
