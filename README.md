@@ -1,42 +1,109 @@
-# simple fitness tracking website
+<div align="center">
+  <img src="" width="200">
+</div>
 
-A fitness-focused web application that enables users to track health metrics and personal data through a clean, intuitive interface.
 
----
+<h1 align="center">
+⭐ Fitnesso • Simple fitness tracking website
+</h1>
 
-## Project Information
 
-| Property | Value |
-|--------|------|
-| Type | university project |
-| Role | full-stack |
-| Platform | website |
-| Development Period | spring 2024 & fall 2024 |
+> A fitness-focused web application that enables users to track health metrics and personal data through a clean, intuitive interface.
+
 
 ---
 
-## Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- PHP
-- MySQL
-- InfinityFree
+## 🔷 Project Overview
+<table>
+<tr><td>Type</td><td>university project</td></tr>
+<tr><td>Platform</td><td>website</td></tr>
+<tr><td>Duration</td><td>spring 2024 & fall 2024</td></tr>
+<tr><td>Status</td><td>completed</td></tr>
+<tr><td>Version</td><td>1.0.0</td></tr>
+<tr><td>Live Demo</td><td>https://fitnesso.ct.ws/</td></tr>
+</table>
 
----
 
-## Key Features
+<!-- 
+📸 SCREENSHOTS PLACEHOLDER
+
+This section will eventually render project screenshots or GIF demos.
+Humans scan images first, so keep it near the top.
+-->
+
+<!-- {{screenshots}} -->
+
+
+## ⚙️ Tech Stack & Tools
+<p>
+  <img src="https://najialjarwan.vercel.app/external-icons/html.svg" height="40" title="HTML5" />&nbsp;&nbsp;
+<img src="https://najialjarwan.vercel.app/external-icons/css.svg" height="40" title="CSS3" />&nbsp;&nbsp;
+<img src="https://najialjarwan.vercel.app/external-icons/javascript.svg" height="40" title="JavaScript (ES6+)" />&nbsp;&nbsp;
+<img src="https://najialjarwan.vercel.app/external-icons/php.svg" height="40" title="PHP" />&nbsp;&nbsp;
+<img src="https://najialjarwan.vercel.app/external-icons/mysql.svg" height="40" title="MySQL" />&nbsp;&nbsp;
+<img src="https://najialjarwan.vercel.app/external-icons/infinityfree.svg" height="40" title="InfinityFree" />&nbsp;&nbsp;
+</p>
+
+<table>
+  <tr>
+    <td><strong>Frontend</strong></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Backend</strong></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Database</strong></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Hosting</strong></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td><strong>Tools</strong></td>
+    <td></td>
+  </tr>
+</table>
+
+
+## 💡 Problem / Motivation
+
+Fitnesso started as my first web development project during a university Web Programming course, where I learned HTML, CSS, JavaScript, and PHP. Initially built as a simple front-end fitness tracking interface, the project was later expanded in an advanced course to include authentication, sessions, and database storage using PHP and MySQL. This evolution allowed me to experience how a simple interface can grow into a full-stack system.
+
+
+## ✨ Key Features
 
 - Developed a fully responsive multi-page website with emphasis on clean UI architecture and maintainable code structure
 - Implemented PHP backend with secure user authentication, session management, and logout functionality
 - Designed structured database for storing user metrics including weight, height, age, and more
 - Architected codebase for scalability, enabling seamless future feature integration and enhancements
 
+
+## 🚀 Future Improvements
+
+- Enhance analytics dashboard to visualize user health data over time.
+- Implement social/community features for sharing achievements.
+- Introduce gamification to motivate regular fitness tracking.
+
+
+## 🎨 Credits & Inspirations
+
+- Special thanks to Basshar for guidance on front-end & back-end structure
+- Developed front-end & back-end collaboratively
+- Inspiration from university course mid-semester project and browsing experience
+
+
+## 📝 Notes
+
+- This project served as an early exploration of full-stack development and database-driven applications. The focus was primarily on understanding authentication flows, PHP session management, and structured data storage.
+
+
 ---
 
-## Repository
 
-https://github.com/najialjarwan/Fitnesso
-
-https://fitnesso.ct.ws/
+<p align="center">
+  <em>This README was automatically generated using a custom README generator</em> ✨
+</p>
