@@ -36,31 +36,27 @@ Humans scan images first, so keep it near the top.
 
 
 ## ⚙️ Tech Stack & Tools
-<p>
-  <img src="https://najialjarwan.vercel.app/external-icons/html.svg" height="40" title="HTML5" />&nbsp;&nbsp;
-<img src="https://najialjarwan.vercel.app/external-icons/css.svg" height="40" title="CSS3" />&nbsp;&nbsp;
-<img src="https://najialjarwan.vercel.app/external-icons/javascript.svg" height="40" title="JavaScript (ES6+)" />&nbsp;&nbsp;
-<img src="https://najialjarwan.vercel.app/external-icons/php.svg" height="40" title="PHP" />&nbsp;&nbsp;
-<img src="https://najialjarwan.vercel.app/external-icons/mysql.svg" height="40" title="MySQL" />&nbsp;&nbsp;
-<img src="https://najialjarwan.vercel.app/external-icons/infinityfree.svg" height="40" title="InfinityFree" />&nbsp;&nbsp;
-</p>
 
 <table>
   <tr>
     <td><strong>Frontend</strong></td>
-    <td></td>
+    <td>
+        <img src="https://najialjarwan.vercel.app/external-icons/html.svg" height="40" title="HTML5" />&nbsp;&nbsp;
+        <img src="https://najialjarwan.vercel.app/external-icons/css.svg" height="40" title="CSS3" />&nbsp;&nbsp;
+        <img src="https://najialjarwan.vercel.app/external-icons/javascript.svg" height="40" title="JavaScript (ES6+)" />
+    </td>
   </tr>
   <tr>
     <td><strong>Backend</strong></td>
-    <td></td>
+    <td><img src="https://najialjarwan.vercel.app/external-icons/php.svg" height="40" title="PHP" />&nbsp;&nbsp;</td>
   </tr>
   <tr>
     <td><strong>Database</strong></td>
-    <td></td>
+    <td><img src="https://najialjarwan.vercel.app/external-icons/mysql.svg" height="40" title="MySQL" />&nbsp;&nbsp;</td>
   </tr>
   <tr>
     <td><strong>Hosting</strong></td>
-    <td></td>
+    <td><img src="https://najialjarwan.vercel.app/external-icons/infinityfree.svg" height="40" title="InfinityFree" />&nbsp;&nbsp;</td>
   </tr>
     <tr>
     <td><strong>Tools</strong></td>
