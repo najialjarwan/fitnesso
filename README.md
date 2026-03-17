@@ -4,7 +4,7 @@
 
 
 <h1 align="center">
-⭐ Fitnesso • Simple fitness tracking website
+⭐ Fitnesso • Simple Fitness Tracking Website
 </h1>
 
 
