@@ -21,24 +21,13 @@
 
 ## 🔷 Project Overview
 <table align="center">
-  <tr>
-    <td><strong>Type</strong></td>
-    <td><strong>My role</strong></td>
-    <td><strong>Platform</strong></td>
-    <td><strong>Duration</strong></td>
-    <td><strong>Status</strong></td>
-    <td><strong>Version</strong></td>
-    <td><strong>Live Demo</strong></td>
-  </tr>
-  <tr>
-    <td>university project</td>
-    <td>full-stack</td>
-    <td>website</td>
-    <td>spring 2024 & fall 2024</td>
-    <td>completed</td>
-    <td>1.0.0</td>
-    <td>https://fitnesso.ct.ws</td>
-  </tr>
+<tr><td>Type</td><td>university project</td></tr>
+<tr><td>My Role</td><td>full-stack</td></tr>
+<tr><td>Platform</td><td>website</td></tr>
+<tr><td>Duration</td><td>spring 2024 & fall 2024</td></tr>
+<tr><td>Status</td><td>completed</td></tr>
+<tr><td>Version</td><td>1.0.0</td></tr>
+<tr><td>Live Demo</td><td>https://fitnesso.ct.ws</td></tr>
 </table>
 
 
