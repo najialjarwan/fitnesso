@@ -63,6 +63,22 @@
 </table>
 
 
+## 🗂️ Project Structure
+```bash
+├── index.php            # Home page
+├── About.php
+├── Contact.php
+├── FitnessAdvisers.php
+├── Nutritionists.php
+├── PersonalTrainers.php
+├── Register.php
+├── JS/                  # JavaScript files
+├── CSS/                 # Stylesheets
+├── Images/              # Images and media
+└── connection.php       # Database connection
+```
+
+
 ## 💡 Problem / Motivation
 
 Fitnesso started as my first web development project during a university Web Programming course, where I learned HTML, CSS, JavaScript, and PHP. Initially built as a simple front-end fitness tracking interface, the project was later expanded in an advanced course to include authentication, sessions, and database storage using PHP and MySQL. This evolution allowed me to experience how a simple interface can grow into a full-stack system.
