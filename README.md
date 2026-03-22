@@ -14,20 +14,23 @@
 ---
 
 ## 📸 Showcase
+### Overview
 <div align="center">
   <img src="Images/fitnesso-showcase.gif" width="100%" title="Fitnesso Quick Look" alt="Fitnesso GIF screenshots showcase" />
 </div>
 
+### Live Demo
+👉 https://fitnesso.ct.ws
+
 
 ## 🔷 Project Overview
 <table align="center">
-<tr><td>Type</td><td>university project</td></tr>
-<tr><td>My Role</td><td>full-stack</td></tr>
-<tr><td>Platform</td><td>website</td></tr>
-<tr><td>Duration</td><td>spring 2024 & fall 2024</td></tr>
-<tr><td>Status</td><td>completed</td></tr>
+<tr><td>Type</td><td>University Project</td></tr>
+<tr><td>My Role</td><td>Full-Stack</td></tr>
+<tr><td>Platform</td><td>Website</td></tr>
+<tr><td>Duration</td><td>Spring 2024 & Fall 2024</td></tr>
+<tr><td>Status</td><td>Completed</td></tr>
 <tr><td>Version</td><td>1.0.0</td></tr>
-<tr><td>Live Demo</td><td>https://fitnesso.ct.ws</td></tr>
 </table>
 
 
